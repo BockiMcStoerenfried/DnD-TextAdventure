@@ -6,6 +6,11 @@
 #include <curl/curl.h>
 #include <nlohmann/json.hpp>
 
+//Headers
+#include "Headers/Handler.h"
+#include "Headers/Model.h"
+#include "Headers/View.h"
+
 
 //HTTP-Request mit libcurl==========================================================================
     size_t WriteCallBack(void* contents, size_t size, size_t nmemb, void* userp){
@@ -64,22 +69,51 @@ std::string monsterFilter(){
 
 void handleCommands(std::vector<std::string> uInput){
 
-    std::ifstream ifs("verbs.json");
-    nlohmann::json jf = nlohmann::json::parse(ifs);
 
-
+    std::ifstream ifsVerbs("JSON/verbs.json");
+    nlohmann::json jsonVerbs = nlohmann::json::parse(ifsVerbs);
+    bool verbFound = false;
     for(std::string verb : uInput){
 
-        for(auto& el : jf.items()){
+    //Verbs
+        for(auto& el : jsonVerbs.items()){
 
-            bool found = jf.items() == verb;
+            if(el.key() == verb){
+
+                if(verbFound){
+                    std::cout << "More than one verb used!" << std::endl;
+                }
+                verbFound = true;
+                
+            }
         } 
+
+    // std::ifstream ifsNouns("nouns.json");
+    // std::ifstream ifsObjects("objects.json");
+    // std::ifstream ifsPrepositions("prepositions.json");
+
+    // nlohmann::json jsonNouns = nlohmann::json::parse(ifsVerbs);
+    // nlohmann::json jsonObjects = nlohmann::json::parse(ifsVerbs);
+    // nlohmann::json jsonPrepositions = nlohmann::json::parse(ifsVerbs);
+
+
+
+    // //Nouns
+    //     for(auto& el : jsonVerbs.items()){
+
+    //         if(el.key() == verb){
+
+    //             if(verbFound){
+    //                 std::cout << "More than one verb used!" << std::endl;
+    //             }
+    //             verbFound = true;
+                
+    //         }
+    //     } 
     }
 
-
-
+    //Objects
 }
-
 
 
 int main(){
