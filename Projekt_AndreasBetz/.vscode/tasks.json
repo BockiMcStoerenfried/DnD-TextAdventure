@@ -8,6 +8,7 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
+                "-I${workspaceFolder}/Headers",
                 "-lcurl",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
