@@ -1,0 +1,23 @@
+{
+
+    "Storyteller" : 
+        {
+            "Beginning" : "Du bist in einem Raum und so.",
+            "Ending" : "Du bist gestorben"
+
+        },
+
+    "Knive" : 
+        {
+            "Look" : "A butterknive with a suprisingly sharp blade",
+            "Talk" : "It doesn't answer",
+            "Attack" : "It doesn't fight back.",
+            "Combine" : 
+                {
+                "Wizard" : "You stab him. He dies.",
+                "Test" : "Test"
+                }
+        }
+
+
+}

@@ -86,19 +86,17 @@ public:
 
 
     //For Handler.h
-    int getEventState(std::string verb){
+    std::string getJSONState(std::string inputWord, std::string sentencePart){
 
-        std::ifstream jsonFile("JSON/verbs.JSON");
+        std::ifstream jsonFile("JSON/" + sentencePart + ".JSON");
         json jsonData = json::parse(jsonFile);
-        int tempInt{};
 
         for(auto& pairs : jsonData.items()){
 
             std::cout << pairs.key() << std::endl;
-            if(pairs.key() == verb){
+            if(pairs.key() == inputWord){
 
-                tempInt = std::stoi(pairs.value().get<std::string>());
-                return tempInt;
+                return pairs.value().get<std::string>();
             }
         }
 
@@ -106,36 +104,21 @@ public:
     }
 
 
+
     //For View.h
-    std::string getData(int dataType, int state){
+    std::string getData(std::string interactor, std::string interaction, std::string with){
 
-        json tempJSON{};
-        std::string tempString{};
+        json jsonData = json::parse(std::ifstream("JSON/interactors.json"));
 
-        switch(dataType){
+        if(with == "" && interaction == "combine"){
 
-            case 1: //viewScene
+            return jsonData[interactor][interaction][with].get<std::string>();
 
-                tempJSON = json::parse((std::ifstream ("JSON/view" + std::to_string(state) + ".json")));
+        }else{
 
-                tempString = tempJSON["0"];
+            return jsonData[interactor][interaction].get<std::string>();
+        }
 
-                return (tempString);
-            break;
-
-
-            case 2: //inventory
-
-                return ((json::parse(std::ifstream ("JSON/inventory.json")))["inventory"]);
-            break;
-
-
-            case 3: //NPC
-
-                return ((json::parse(std::ifstream ("JSON/npc" + std::to_string(state) + ".json")))[std::to_string(state)]);
-            break;
-
-        };
     }
 };
 

@@ -16,17 +16,13 @@ public:
         data = new ModelDataHolder();
     }
 
-    int setVerb(std::string verb){
 
-        int verbState = data->getEventState(verb);
-        //calls actions that change JSON
-        if(verbState != 0){
+    std::string setSentencePart(std::string word, std::string type){
 
-            return verbState;
-        } else{
-            return 0;
-        }
+        return data->getJSONState(word, type);
     }
+
+
 };
 
 

@@ -21,7 +21,10 @@ std::vector<std::string> getUserInput(){
 
         std::string temp;
         iss >> temp;
-        inputVec.push_back(temp);
+
+        if(temp != "")
+            inputVec.push_back(temp);
+
     } while(iss);
 
     return inputVec;
@@ -32,25 +35,47 @@ void handleCommands(){
     EventHandler* event = new EventHandler();
     ViewManager* view = new ViewManager(0); //Start-State
 
-    int viewType = 1;
-    int viewState = 0;
+    std::string interactor = "Storyteller"; 
+    std::string interaction = "Beginning";
+    std::string with = "";  
+
 
     do{
 
-        view->printView(viewType, viewState);
+        view->printView(interactor, interaction, with);
 
         std::vector<std::string> uInput = getUserInput();
 
-        if(event->setVerb(uInput[0]) != 0){
+        if(uInput.size() == 2){
 
-            //change viewType & viewState
+            if(event->setSentencePart(uInput[0], "verbs") != "" && event->setSentencePart(uInput[1], "interactors") != ""){
 
+                interaction = event->setSentencePart(uInput[0], "verbs");
+                interactor = event->setSentencePart(uInput[1], "interactors");
+            }else{
+
+                std::cout << "Invalid Sentence!" << std::endl;                
+            }
+
+        }else if(uInput.size() == 4){
+
+            if(event->setSentencePart(uInput[0], "verbs") != "" 
+            && event->setSentencePart(uInput[1], "interactors") != ""
+            && event->setSentencePart(uInput[3], "interactors") != ""){
+
+                interaction = event->setSentencePart(uInput[0], "verbs");
+                interactor = event->setSentencePart(uInput[1], "interactors");
+
+                with = (interaction == "combine") ? event->setSentencePart(uInput[3], "interactors") : "";
+            }else{
+
+                std::cout << "Invalid Sentence!" << std::endl;                
+            }
         }else{
 
-            std::cout   << "Invalid sentence or verb! \n" 
-                        << "Remember: A sentence has to start with a valid verb!"
-                        << std::endl;
+            std::cout << "Invalid Sentence!" << std::endl;
         }
+
 
     }while (true);
 }

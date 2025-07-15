@@ -19,9 +19,10 @@ public:
     }
 
     //To Do - JSON-Format muss festgelegt werden
-    void printView(int viewType, int viewState){
+    void printView(std::string interactor, std::string interaction, std::string with){
 
-        std::cout << data->getData(viewType, viewState) << std::endl;
+        //variable = (condition) ? expressionTrue : expressionFalse;
+        std::cout << data->getData(interactor, interaction, with) << std::endl;
     }
 
 };
