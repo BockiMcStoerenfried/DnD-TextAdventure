@@ -93,14 +93,17 @@ public:
 
         for(auto& pairs : jsonData.items()){
 
-            std::cout << pairs.key() << std::endl;
             if(pairs.key() == inputWord){
 
-                return pairs.value().get<std::string>();
+                if(sentencePart == "verb"){
+                    return pairs.value().get<std::string>();
+                }else{
+                    return pairs.key();
+                }
             }
         }
 
-        return 0;
+        return "";
     }
 
 
@@ -110,7 +113,7 @@ public:
 
         json jsonData = json::parse(std::ifstream("JSON/interactors.json"));
 
-        if(with == "" && interaction == "combine"){
+        if(with != "" && interaction == "combine"){
 
             return jsonData[interactor][interaction][with].get<std::string>();
 

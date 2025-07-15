@@ -20,10 +20,16 @@ std::vector<std::string> getUserInput(){
     do{
 
         std::string temp;
+        std::string temp2 = "";
         iss >> temp;
 
-        if(temp != "")
-            inputVec.push_back(temp);
+        for(char x : temp){
+            
+            temp2 += std::tolower(x);
+        }
+
+        if(temp2 != "")
+            inputVec.push_back(temp2);
 
     } while(iss);
 
@@ -35,8 +41,8 @@ void handleCommands(){
     EventHandler* event = new EventHandler();
     ViewManager* view = new ViewManager(0); //Start-State
 
-    std::string interactor = "Storyteller"; 
-    std::string interaction = "Beginning";
+    std::string interactor = "storyteller"; 
+    std::string interaction = "beginning";
     std::string with = "";  
 
 

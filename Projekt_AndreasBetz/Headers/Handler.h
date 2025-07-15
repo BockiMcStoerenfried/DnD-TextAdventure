@@ -22,6 +22,8 @@ public:
         return data->getJSONState(word, type);
     }
 
+    // void writeJSON(){}
+
 
 };
 

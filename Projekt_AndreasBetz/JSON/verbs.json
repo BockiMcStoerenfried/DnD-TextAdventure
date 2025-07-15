@@ -2,7 +2,7 @@
   "open" : "open",
   "unclose" : "open",
 
+  "combine" : "combine",
 
-
-  "knive" : "kill"
+  "attack" : "attack"
 }

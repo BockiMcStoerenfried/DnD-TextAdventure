@@ -1,23 +1,26 @@
 {
 
-    "Storyteller" : 
+    "storyteller" : 
         {
-            "Beginning" : "Du bist in einem Raum und so.",
-            "Ending" : "Du bist gestorben"
+            "beginning" : "Du bist in einem Raum und so.",
+            "ending" : "Du bist gestorben"
 
         },
 
-    "Knive" : 
+    "knive" : 
         {
-            "Look" : "A butterknive with a suprisingly sharp blade",
-            "Talk" : "It doesn't answer",
-            "Attack" : "It doesn't fight back.",
-            "Combine" : 
+            "look" : "A butterknive with a suprisingly sharp blade",
+            "talk" : "It doesn't answer",
+            "attack" : "It doesn't fight back.",
+            "open" : "How would you even do that?",
+            "combine" : 
                 {
-                "Wizard" : "You stab him. He dies.",
-                "Test" : "Test"
+                "wizard" : "You stab him. He dies.",
+                "test" : "Test",
+                "storyteller" : "Joa"
                 }
         }
+
 
 
 }
