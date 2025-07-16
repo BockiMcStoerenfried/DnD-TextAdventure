@@ -115,6 +115,11 @@ public:
 
         } while(iss);
 
+        if(inputVec.empty()){
+
+            inputVec.push_back("");
+        }
+
         return inputVec;
     }
 

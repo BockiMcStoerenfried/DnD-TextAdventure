@@ -1,6 +1,5 @@
-//Headers
 #include "Headers/Handler.h"
-#include "Headers/View.h"-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#include "Headers/View.h"
 
 
 void handleCommands(){
