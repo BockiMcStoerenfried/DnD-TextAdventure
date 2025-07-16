@@ -4,5 +4,10 @@
   
     "combine" : "combine",
   
-    "attack" : "attack"
+    "attack" : "attack",
+
+    "watch" : "look",
+    "investigate" : "look",
+    "examine" : "look"
+    
   }

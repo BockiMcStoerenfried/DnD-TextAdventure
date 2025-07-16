@@ -8,6 +8,7 @@
 #include <curl/curl.h>
 #include <nlohmann/json.hpp>
 
+
 using nlohmann::json;
 
 
@@ -95,7 +96,7 @@ public:
 
             if(pairs.key() == inputWord){
 
-                if(sentencePart == "verb"){
+                if(sentencePart == "verbs"){
                     return pairs.value().get<std::string>();
                 }else{
                     return pairs.key();

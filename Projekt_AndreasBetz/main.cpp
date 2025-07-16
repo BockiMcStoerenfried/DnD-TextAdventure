@@ -1,106 +1,79 @@
-#include <sstream>
-#include <vector>
-
-
 //Headers
 #include "Headers/Handler.h"
 #include "Headers/View.h"-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
-std::vector<std::string> getUserInput(){
-
-    std::string userInput = {}; 
-    std::vector<std::string> inputVec{};
-
-    std::cout << "What do you want to do?";
-    std::getline(std::cin, userInput);
-
-    std::istringstream iss(userInput);
-
-    do{
-
-        std::string temp;
-        std::string temp2 = "";
-        iss >> temp;
-
-        for(char x : temp){
-            
-            temp2 += std::tolower(x);
-        }
-
-        if(temp2 != "")
-            inputVec.push_back(temp2);
-
-    } while(iss);
-
-    return inputVec;
-}
 
 void handleCommands(){
 
     EventHandler* event = new EventHandler();
     ViewManager* view = new ViewManager(0); //Start-State
 
+    bool gameRunning = true;
     json interactor = "storyteller"; 
     json interaction = "beginning";
     json with = "";  
 
 
+//Empty JSON + Print Start
     event->resetJSON(); 
     view->printView(interactor, interaction, with);
 
+
+//GameLoop
     do{
 
-//UserInput =========================================================
+        //UserInput =========================================================
+            
+        std::vector<std::string> uInput = event->getUserInput();
+
+        //Check UserInput + set  ============================================================
+
         
+        if(uInput.size() == 2){
 
-    std::vector<std::string> uInput = getUserInput();
+            if(event->setSentencePart(uInput[0], "verbs") != "" && event->setSentencePart(uInput[1], "interactors") != ""){
 
-//Logic ============================================================
+                interaction = event->setSentencePart(uInput[0], "verbs");
+                interactor = event->setSentencePart(uInput[1], "interactors");
+                with = "";
+            }else{
 
-    //Only Verb and Subject
-    if(uInput.size() == 2){
+                std::cout << "I don't know how to do that!!" << std::endl;                
+            }
 
-        if(event->setSentencePart(uInput[0], "verbs") != "" && event->setSentencePart(uInput[1], "interactors") != ""){
+        //Verb + Subject + (Preposition) + Object ===========================================
+        }else if(uInput.size() == 4){
 
-            interaction = event->setSentencePart(uInput[0], "verbs");
-            interactor = event->setSentencePart(uInput[1], "interactors");
-            with = "";
+            if(event->setSentencePart(uInput[0], "verbs") != "" 
+            && event->setSentencePart(uInput[1], "interactors") != ""
+            && event->setSentencePart(uInput[3], "interactors") != ""){
+
+                interaction = event->setSentencePart(uInput[0], "verbs");
+                interactor = event->setSentencePart(uInput[1], "interactors");
+                with = (interaction == "combine") ? event->setSentencePart(uInput[3], "interactors") : "";
+            }else{
+
+                std::cout << "I don't know how to do that!!" << std::endl;                
+            }
         }else{
 
-            std::cout << "Invalid Sentence!" << std::endl;                
+            std::cout << "I don't know how to do that!!" << std::endl;
         }
 
-    //Verb + Subject + (Preposition) + Object 
-    }else if(uInput.size() == 4){
+        view->printView(interactor, interaction, with);
+        event->statusChanger(interactor, interaction, with);
 
-        if(event->setSentencePart(uInput[0], "verbs") != "" 
-        && event->setSentencePart(uInput[1], "interactors") != ""
-        && event->setSentencePart(uInput[3], "interactors") != ""){
+        if(event->checkEndGame() || uInput[0] == "quit"){
 
-            interaction = event->setSentencePart(uInput[0], "verbs");
-            interactor = event->setSentencePart(uInput[1], "interactors");
-            with = (interaction == "combine") ? event->setSentencePart(uInput[3], "interactors") : "";
-        }else{
+            gameRunning = false;
+        }       
 
-            std::cout << "Invalid Sentence!" << std::endl;                
-        }
-    }else{
-
-        std::cout << "Invalid Sentence!" << std::endl;
-    }
-
-    view->printView(interactor, interaction, with);
-    event->statusChanger(interactor, interaction, with);
-
-
-    }while (true);
+    }while (gameRunning);
 }
 
 
 
 int main(){
-
 
     handleCommands();
 

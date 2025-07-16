@@ -1,9 +1,21 @@
 #ifndef VIEW_H
 #define VIEW_H
 
-#include <iostream>
 #include "Model.h"
 
+#include <chrono>
+#include <thread>
+#include <iostream>
+#include <sstream>
+#include <vector>
+
+void typeWrite(const std::string& text, int delayMs = 50) {
+    for (char c : text) {
+        std::cout << c << std::flush;
+        std::this_thread::sleep_for(std::chrono::milliseconds(delayMs));
+    }
+    std::cout << std::endl;
+}
 
 class ViewManager{
 
@@ -23,9 +35,8 @@ public:
 
         json printFile =  data->getData(interactor, interaction, with);
 
-        std::cout << printFile[0] << std::endl;
-
-
+        std::cout << "\n" << std::endl;
+        typeWrite(printFile[0], 40);
     }
 };
 

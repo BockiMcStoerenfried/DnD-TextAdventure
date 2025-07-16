@@ -26,9 +26,12 @@
             "You are in a room and so on.",
             0
         ],
-        "status": "_"
+        "status": "_",
+        "endState_" : "end"
     },
     "wizard": {
-        "status": "_"
+        "status": "_",
+        "look_" : ["An old and wise man", 1],
+        "look_dead" : ["The old man lies unmoving on the floor", 0]
     }
 }
