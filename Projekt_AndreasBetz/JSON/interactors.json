@@ -1,1 +1,11 @@
-{"knive":{"combine_":{"storyteller":["Impossible to kill a god",0],"test":["Test",2],"wizard":["You stab him. He dies.",1]},"look_dead":"The knive is dead","open_":["How would you even do that?",1],"status":"_"},"storyteller":{"beginning_":["You are in a room and so on.",0],"endState_":"end","status":"_"},"wizard":{"look_":["An old and wise man",1],"look_dead":["The old man lies unmoving on the floor",0],"status":"_"}}
+{
+    "knivewizard": "fartnoise",
+    "storyteller": {
+        "beginning_": [
+            "You are in a room and so on.",
+            0
+        ],
+        "endState": "false",
+        "status": "_"
+    }
+}

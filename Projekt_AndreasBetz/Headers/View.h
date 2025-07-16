@@ -9,13 +9,6 @@
 #include <sstream>
 #include <vector>
 
-void typeWrite(const std::string& text, int delayMs = 50) {
-    for (char c : text) {
-        std::cout << c << std::flush;
-        std::this_thread::sleep_for(std::chrono::milliseconds(delayMs));
-    }
-    std::cout << std::endl;
-}
 
 class ViewManager{
 
@@ -25,9 +18,22 @@ private:
 
 public:
 
-    ViewManager(int state){
+    void typeWrite(const std::string& text, int delayMs = 50) {
+        for (char c : text) {
+            std::cout << c << std::flush;
+            std::this_thread::sleep_for(std::chrono::milliseconds(delayMs));
+        }
+        std::cout << std::endl;
+    }
+
+    ViewManager(){
 
         data = new ModelDataHolder();
+    }
+
+    ~ViewManager(){
+
+        delete data;
     }
 
  
@@ -37,6 +43,9 @@ public:
 
         std::cout << "\n" << std::endl;
         typeWrite(printFile[0], 40);
+
+        
+
     }
 };
 

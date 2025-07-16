@@ -7,11 +7,11 @@
             ],
             "test": [
                 "Test",
-                2
+                50
             ],
             "wizard": [
                 "You stab him. He dies.",
-                1
+                50
             ]
         },
         "look_dead": "The knive is dead",
@@ -19,6 +19,7 @@
             "How would you even do that?",
             1
         ],
+        "open_dead" : ["How did you know to do that!? The Game is ending           ", 99],
         "status": "_"
     },
     "storyteller": {
@@ -27,7 +28,7 @@
             0
         ],
         "status": "_",
-        "endState_" : "end"
+        "endState" : "false"
     },
     "wizard": {
         "status": "_",

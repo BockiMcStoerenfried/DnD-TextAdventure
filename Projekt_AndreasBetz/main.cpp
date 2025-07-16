@@ -6,7 +6,7 @@
 void handleCommands(){
 
     EventHandler* event = new EventHandler();
-    ViewManager* view = new ViewManager(0); //Start-State
+    ViewManager* view = new ViewManager(); //Start-State
 
     bool gameRunning = true;
     json interactor = "storyteller"; 
@@ -38,7 +38,8 @@ void handleCommands(){
                 with = "";
             }else{
 
-                std::cout << "I don't know how to do that!!" << std::endl;                
+                std::cout << std::endl;
+                view->typeWrite("I don't know how to do that!!", 40);                
             }
 
         //Verb + Subject + (Preposition) + Object ===========================================
@@ -53,22 +54,29 @@ void handleCommands(){
                 with = (interaction == "combine") ? event->setSentencePart(uInput[3], "interactors") : "";
             }else{
 
-                std::cout << "I don't know how to do that!!" << std::endl;                
+            std::cout << std::endl;
+              view->typeWrite("I don't know how to do that!!", 40);                  
             }
         }else{
 
-            std::cout << "I don't know how to do that!!" << std::endl;
+            std::cout << std::endl;
+            view->typeWrite("I don't know how to do that!!", 40);     
         }
+
+        if(uInput[0] == "quit") break;
 
         view->printView(interactor, interaction, with);
         event->statusChanger(interactor, interaction, with);
 
-        if(event->checkEndGame() || uInput[0] == "quit"){
+        if(event->checkEndGame()){
 
-            gameRunning = false;
+            break;
         }       
 
-    }while (gameRunning);
+    }while (true);
+
+    delete event;
+    delete view;
 }
 
 

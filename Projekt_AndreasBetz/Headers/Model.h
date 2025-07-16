@@ -72,21 +72,22 @@ private:
 
 public:
 
-    void getMonster(){
+    // void getMonster(){
 
-        std::string filterURL = monsterFilter();
+    //     std::string filterURL = monsterFilter();
 
-        nlohmann::json rndMonster = httpGET(filterURL);
+    //     nlohmann::json rndMonster = httpGET(filterURL);
 
-        for(const auto& item : rndMonster["results"]){
+    //     for(const auto& item : rndMonster["results"]){
 
-            std::cout << item["speed"]["walk"].get<int>() << std::endl;
-        }
+    //         std::cout << item["speed"]["walk"].get<int>() << std::endl;
+    //     }
 
-    }
+    // }
 
 
-//For Handler.h ====================================================================
+
+//Get Key from interactions and Value from verbs
     std::string getJSONState(std::string inputWord, std::string sentencePart){
 
         std::ifstream jsonFile("JSON/" + sentencePart + ".JSON");
@@ -119,6 +120,31 @@ public:
         file << writeOffFile ;
     }
 
+
+    void combineItems(std::string a, std::string b){
+
+
+        std::ifstream jsonFile("JSON/combine.JSON");
+
+
+        json combinedItem = json::parse(jsonFile);
+        json oldItems = json::parse(std::ifstream("JSON/interactors.json"));   
+
+        oldItems[a + b] = combinedItem[a + b];
+        oldItems.erase(a);
+        oldItems.erase(b);
+
+
+        std::ofstream file("JSON/interactors.json");
+        file << oldItems;
+
+        
+
+    }
+
+
+
+
 //Getting data ========================================================================
     json getData(std::string interactor, std::string interaction, std::string with){
 
@@ -136,6 +162,29 @@ public:
         }
 
     }
+
+
+//Ending===============================================================================
+    json getEnd(){
+
+        json jsonData = json::parse(std::ifstream("JSON/interactors.json"));
+
+        return jsonData["storyteller"]["endState"];
+    }
+
+    void changeEnd(){
+
+
+        json jsonData = json::parse(std::ifstream("JSON/interactors.json"));
+
+        jsonData["storyteller"]["endState"] = "true";
+
+        std::ofstream file ("JSON/interactors.json");
+        file << jsonData;
+
+    }
+
+//===============================================================================
 
 //GetFile
 

@@ -2,6 +2,7 @@
 #define HANDLER_H
 
 #include "Model.h"
+#include "View.h"
 
 
 class EventHandler{
@@ -9,12 +10,18 @@ class EventHandler{
 private:
 
     ModelDataHolder* data;
+    ViewManager* view;
 
 public:
 
     EventHandler(){
 
         data = new ModelDataHolder();
+    }
+
+    ~EventHandler() {
+        delete data;
+        delete view;
     }
 
     json setSentencePart(std::string word, std::string type){
@@ -46,6 +53,16 @@ public:
                 }
             return;
 
+            case 50:
+
+                data->combineItems(interactor.get<std::string>() , with.get<std::string>());
+            return;
+
+            case 99:
+
+                data->changeEnd();
+            return;
+
             default:
                 return;
 
@@ -68,18 +85,16 @@ public:
 
     bool checkEndGame(){
 
-        return data->getData("storyteller", "endState", "").get<std::string>() == "end";
-
-        return false;
-
+        return data->getEnd().get<std::string>() == "true";
     }
 
     std::vector<std::string> getUserInput(){
 
         std::string userInput = {}; 
         std::vector<std::string> inputVec{};
+        view = new ViewManager();
 
-        std::cout << "What do you want to do?" << std::endl;
+        view->typeWrite("What do you want to do?", 40);
         std::getline(std::cin, userInput);
 
         std::istringstream iss(userInput);
