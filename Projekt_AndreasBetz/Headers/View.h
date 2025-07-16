@@ -18,13 +18,15 @@ public:
         data = new ModelDataHolder();
     }
 
-    //To Do - JSON-Format muss festgelegt werden
-    void printView(std::string interactor, std::string interaction, std::string with){
+ 
+    void printView(json interactor, json interaction, json with){
 
-        //variable = (condition) ? expressionTrue : expressionFalse;
-        std::cout << data->getData(interactor, interaction, with) << std::endl;
+        json printFile =  data->getData(interactor, interaction, with);
+
+        std::cout << printFile[0] << std::endl;
+
+
     }
-
 };
 
 

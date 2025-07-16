@@ -1,0 +1,34 @@
+{
+    "knive": {
+        "combine_": {
+            "storyteller": [
+                "Impossible to kill a god",
+                0
+            ],
+            "test": [
+                "Test",
+                2
+            ],
+            "wizard": [
+                "You stab him. He dies.",
+                1
+            ]
+        },
+        "look_dead": "The knive is dead",
+        "open_": [
+            "How would you even do that?",
+            1
+        ],
+        "status": "_"
+    },
+    "storyteller": {
+        "beginning_": [
+            "You are in a room and so on.",
+            0
+        ],
+        "status": "_"
+    },
+    "wizard": {
+        "status": "_"
+    }
+}

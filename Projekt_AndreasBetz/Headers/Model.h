@@ -24,7 +24,7 @@ private:
         return totalSize;
     }
 
-    nlohmann::json httpGET(std::string apiURL){
+    json httpGET(std::string apiURL){
 
         CURL* curl;
         CURLcode res;   
@@ -85,7 +85,7 @@ public:
     }
 
 
-    //For Handler.h
+//For Handler.h ====================================================================
     std::string getJSONState(std::string inputWord, std::string sentencePart){
 
         std::ifstream jsonFile("JSON/" + sentencePart + ".JSON");
@@ -106,22 +106,41 @@ public:
         return "";
     }
 
+    //Changing status in JSON-File
+    void changeJSONState(std::string interactor, std::string status){
+
+        json writeOffFile = json::parse(std::ifstream("JSON/interactors.json"));
 
 
-    //For View.h
-    std::string getData(std::string interactor, std::string interaction, std::string with){
+        writeOffFile[interactor]["status"] = "_" + status;
+
+        std::ofstream file("JSON/interactors.json");
+        file << writeOffFile ;
+    }
+
+//Getting data ========================================================================
+    json getData(std::string interactor, std::string interaction, std::string with){
 
         json jsonData = json::parse(std::ifstream("JSON/interactors.json"));
 
-        if(with != "" && interaction == "combine"){
+        interaction += jsonData[interactor]["status"];
 
-            return jsonData[interactor][interaction][with].get<std::string>();
+        if(with != "" && interaction == "combine_"){
+
+            return jsonData[interactor][interaction][with];
 
         }else{
 
-            return jsonData[interactor][interaction].get<std::string>();
+            return jsonData[interactor][interaction];
         }
 
+    }
+
+//GetFile
+
+    json getFile(std::string fileName){
+
+        return json::parse(std::ifstream(fileName));
     }
 };
 
