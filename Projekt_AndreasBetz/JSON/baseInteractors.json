@@ -1,5 +1,22 @@
 {
+
+    "table" : {
+
+        "status" : "_",
+
+        "use_" : ["The table does not want to be used", 0],
+        "attack_" : ["The table is too sturdy", 0],
+        "look_" : ["A solid oak table, enforced with magic", 0],
+        "combine_" : [
+
+
+        ]
+    },
+
+
+
     "knive": {
+        "look_" : ["A messerle", 0],
         "combine_": {
             "storyteller": [
                 "Impossible to kill a god",

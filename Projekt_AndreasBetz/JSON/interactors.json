@@ -1,11 +1,1 @@
-{
-    "knivewizard": "fartnoise",
-    "storyteller": {
-        "beginning_": [
-            "You are in a room and so on.",
-            0
-        ],
-        "endState": "false",
-        "status": "_"
-    }
-}
+{"knive":{"combine_":{"storyteller":["Impossible to kill a god",0],"test":["Test",50],"wizard":["You stab him. He dies.",50]},"look_":["A messerle",0],"look_dead":"The knive is dead","open_":["How would you even do that?",1],"open_dead":["How did you know to do that!? The Game is ending           ",99],"status":"_"},"storyteller":{"beginning_":["You are in a room and so on.",0],"endState":"false","status":"_"},"table":{"attack_":["The table is too sturdy",0],"combine_":[],"look_":["A solid oak table, enforced with magic",0],"status":"_","use_":["The table does not want to be used",0]},"wizard":{"look_":["An old and wise man",1],"look_dead":["The old man lies unmoving on the floor",0],"status":"_"}}

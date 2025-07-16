@@ -1,13 +1,24 @@
 {
-    "open" : "open",
-    "unclose" : "open",
+  "use" : "use",
+  "utilize" : "use",
   
-    "combine" : "combine",
+  "attack": "attack",
+  "break" : "attack",
+  "destroy" : "attack",
+  "smash" : "attack",
+  "fight" : "attack",
+  "hurt" : "attack",
   
-    "attack" : "attack",
+  "examine": "look",
+  "investigate": "look",
+  "watch": "look",
+  "inspect" : "look",
+  "study" : "look",
 
-    "watch" : "look",
-    "investigate" : "look",
-    "examine" : "look"
+  "combine" : "combine",
+  "mix" : "combine",
+  "blend" : "combine",
+  "fuse" : "combine",
+  "merge" : "combine"
     
   }

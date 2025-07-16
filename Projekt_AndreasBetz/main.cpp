@@ -36,10 +36,13 @@ void handleCommands(){
                 interaction = event->setSentencePart(uInput[0], "verbs");
                 interactor = event->setSentencePart(uInput[1], "interactors");
                 with = "";
+
+                view->printView(interactor, interaction, with);
+                event->statusChanger(interactor, interaction, with);
             }else{
 
                 std::cout << std::endl;
-                view->typeWrite("I don't know how to do that!!", 40);                
+                view->typeWrite("You don't know how!!", 40);                
             }
 
         //Verb + Subject + (Preposition) + Object ===========================================
@@ -52,21 +55,22 @@ void handleCommands(){
                 interaction = event->setSentencePart(uInput[0], "verbs");
                 interactor = event->setSentencePart(uInput[1], "interactors");
                 with = (interaction == "combine") ? event->setSentencePart(uInput[3], "interactors") : "";
+
+                view->printView(interactor, interaction, with);
+                event->statusChanger(interactor, interaction, with);
             }else{
 
             std::cout << std::endl;
-              view->typeWrite("I don't know how to do that!!", 40);                  
+              view->typeWrite("You don't know how!!!", 40);                  
             }
         }else{
 
             std::cout << std::endl;
-            view->typeWrite("I don't know how to do that!!", 40);     
+            view->typeWrite("You don't know how!!!", 40);     
         }
 
         if(uInput[0] == "quit") break;
 
-        view->printView(interactor, interaction, with);
-        event->statusChanger(interactor, interaction, with);
 
         if(event->checkEndGame()){
 

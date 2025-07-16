@@ -39,6 +39,8 @@ public:
  
     void printView(json interactor, json interaction, json with){
 
+        std::cout << interactor << " " << interaction << " " << with;
+
         json printFile =  data->getData(interactor, interaction, with);
 
         std::cout << "\n" << std::endl;
