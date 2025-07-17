@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2025-07-17.md",
+                "file": "Doku_Dump.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-07-17"
+              "title": "Doku_Dump"
             }
           }
         ]
@@ -170,23 +170,24 @@
   },
   "active": "0fe4743478836c28",
   "lastOpenFiles": [
-    "2025-07-15.md",
+    "~WRL0652.tmp",
+    "~WRD0644.tmp",
+    "~WRD0636.tmp",
+    "Projektdokumentation_AndreasBetz.pdf",
+    "mso2E21.tmp",
+    "mso2BBF.tmp",
+    "~WRL2737.tmp",
+    "~WRD2725.tmp",
+    "~WRL1635.tmp",
+    "~WRD1623.tmp",
+    "Notes.md",
+    "2025-07-16.md",
     "2025-07-17.md",
+    "2025-07-15.md",
     "2025-07-14.md",
     "Doku_Dump.md",
-    "2025-07-16.md",
     "Story.md",
-    "Notes.md",
     "curl/websockets.h",
-    "curl/urlapi.h",
-    "curl/typecheck-gcc.h",
-    "curl/system.h",
-    "curl/stdcheaders.h",
-    "curl/options.h",
-    "curl/multi.h",
-    "curl/mprintf.h",
-    "curl/header.h",
-    "curl/easy.h",
     "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/wcurl.md",
     "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/testcurl.md",
     "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/runtests.md",
@@ -204,7 +205,6 @@
     "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/RELEASE-TOOLS.md",
     "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/ROADMAP.md",
     "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/RELEASE-PROCEDURE.md",
-    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/README.md",
-    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/MAIL-ETIQUETTE.md"
+    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/README.md"
   ]
 }

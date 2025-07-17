@@ -1,0 +1,24 @@
+{
+  "use" : "use",
+  "utilize" : "use",
+  
+  "attack": "attack",
+  "break" : "attack",
+  "destroy" : "attack",
+  "smash" : "attack",
+  "fight" : "attack",
+  "hurt" : "attack",
+  
+  "examine": "look",
+  "investigate": "look",
+  "watch": "look",
+  "inspect" : "look",
+  "study" : "look",
+
+  "combine" : "combine",
+  "mix" : "combine",
+  "blend" : "combine",
+  "fuse" : "combine",
+  "merge" : "combine"
+    
+  }
