@@ -1,9 +1,10 @@
 #ifndef HANDLER_H
 #define HANDLER_H
 
+#include <vector>
+
 #include "Model.h"
 #include "View.h"
-
 
 class EventHandler{
 
@@ -34,7 +35,7 @@ public:
 
     //Empty JSON + Print Start
         resetJSON(); 
-        view->printView(interactor, interaction, with);
+        view->printView(data->getData(interactor, interaction, with));
 
 
     //GameLoop
@@ -56,7 +57,7 @@ public:
                     interactor = setSentencePart(uInput[1], "interactors");
                     with = "";
 
-                    view->printView(interactor, interaction, with);
+                    view->printView(data->getData(interactor, interaction, with));
                     statusChanger(interactor, interaction, with);
                 }else{
 
@@ -75,7 +76,7 @@ public:
                     interactor = setSentencePart(uInput[1], "interactors");
                     with = (interaction == "combine") ? setSentencePart(uInput[3], "interactors") : "";
 
-                    view->printView(interactor, interaction, with);
+                    view->printView(data->getData(interactor, interaction, with));
                     statusChanger(interactor, interaction, with);
                 }else{
 

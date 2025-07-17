@@ -1,14 +1,9 @@
 #ifndef VIEW_H
 #define VIEW_H
 
-#include "Model.h"
-
 #include <chrono>
 #include <thread>
 #include <iostream>
-
-#include <vector>
-
 
 class ViewManager{
 
@@ -26,19 +21,7 @@ public:
         std::cout << std::endl;
     }
 
-    ViewManager(){
-
-        data = new ModelDataHolder();
-    }
-
-    ~ViewManager(){
-
-        delete data;
-    }
-
-    void printView(json interactor, json interaction, json with){
-
-        json printFile =  data->getData(interactor, interaction, with);
+    void printView(json printFile){
 
         std::cout << "\n" << std::endl;
         typeWrite(printFile[0], 40);

@@ -3,7 +3,6 @@
 
 #include <fstream>
 #include <string>
-#include <iostream>
 
 #include <curl/curl.h>
 #include <nlohmann/json.hpp>
@@ -16,59 +15,59 @@ class ModelDataHolder{
 
 private:
 
-//HTTP-Request mit libcurl==========================================================================
-    static size_t WriteCallBack(void* contents, size_t size, size_t nmemb, void* userp){
+// //HTTP-Request mit libcurl==========================================================================
+//     static size_t WriteCallBack(void* contents, size_t size, size_t nmemb, void* userp){
 
-        size_t totalSize = size * nmemb;
-        std::string* response = static_cast<std::string*>(userp);
-        response->append(static_cast<char*>(contents), totalSize);
-        return totalSize;
-    }
+//         size_t totalSize = size * nmemb;
+//         std::string* response = static_cast<std::string*>(userp);
+//         response->append(static_cast<char*>(contents), totalSize);
+//         return totalSize;
+//     }
 
-    json httpGET(std::string apiURL){
+//     json httpGET(std::string apiURL){
 
-        CURL* curl;
-        CURLcode res;   
-        std::string readBuffer;
+//         CURL* curl;
+//         CURLcode res;   
+//         std::string readBuffer;
 
-        const char* cstrURL = apiURL.c_str();
+//         const char* cstrURL = apiURL.c_str();
 
-        curl = curl_easy_init();
-        curl_easy_setopt(curl, CURLOPT_URL, cstrURL);
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallBack);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+//         curl = curl_easy_init();
+//         curl_easy_setopt(curl, CURLOPT_URL, cstrURL);
+//         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallBack);
+//         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
 
-        res = curl_easy_perform(curl);
+//         res = curl_easy_perform(curl);
 
-        nlohmann::json jsonData;
+//         nlohmann::json jsonData;
 
-        if(res != CURLE_OK){
+//         if(res != CURLE_OK){
 
-            std::cerr << "curl_easy_perform() does not work" << curl_easy_strerror(res);
-        }else{
+//             std::cerr << "curl_easy_perform() does not work" << curl_easy_strerror(res);
+//         }else{
 
-            try{
-                jsonData = nlohmann::json::parse(readBuffer);
+//             try{
+//                 jsonData = nlohmann::json::parse(readBuffer);
 
-            }catch (nlohmann::json::parse_error& e){
+//             }catch (nlohmann::json::parse_error& e){
 
-                std::cerr << "JSON parse error: " << e.what() << "\n";
-            }
-        }
+//                 std::cerr << "JSON parse error: " << e.what() << "\n";
+//             }
+//         }
 
-        curl_easy_cleanup(curl);
+//         curl_easy_cleanup(curl);
 
-        return jsonData;
-    }
+//         return jsonData;
+//     }
 
-    std::string monsterFilter(){
+//     std::string monsterFilter(){
 
-        std::string baseURL = "https://api.open5e.com/monsters/?";
+//         std::string baseURL = "https://api.open5e.com/monsters/?";
 
-        baseURL += "cr=2&hit_points__gte=30&hit_points__lte=50&document__slug=wotc-srd";
+//         baseURL += "cr=2&hit_points__gte=30&hit_points__lte=50&document__slug=wotc-srd";
 
-        return baseURL;
-    }
+//         return baseURL;
+//     }
 
 public:
 
@@ -84,7 +83,6 @@ public:
     //     }
 
     // }
-
 
 
 //Get Key from interactions and Value from verbs
