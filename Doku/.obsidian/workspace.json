@@ -1,0 +1,210 @@
+{
+  "main": {
+    "id": "cbfa1c0cfb86d287",
+    "type": "split",
+    "children": [
+      {
+        "id": "a4242e87961a9750",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0fe4743478836c28",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2025-07-17.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2025-07-17"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "83dac72a920111d6",
+    "type": "split",
+    "children": [
+      {
+        "id": "9038eb7448cd4d8b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "296799682edba076",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "829adb256580c0ba",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "398b8d86dd9fe696",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "eb37153f2c69b361",
+    "type": "split",
+    "children": [
+      {
+        "id": "313c933fdaf52492",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "89ddb3fbc6f494c0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Doku_Dump.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Doku_Dump"
+            }
+          },
+          {
+            "id": "67f8441870c1a1f9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Doku_Dump.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Doku_Dump"
+            }
+          },
+          {
+            "id": "64db61ef7fff943c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "ebce25d085176459",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Doku_Dump.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Doku_Dump"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "0fe4743478836c28",
+  "lastOpenFiles": [
+    "2025-07-15.md",
+    "2025-07-17.md",
+    "2025-07-14.md",
+    "Doku_Dump.md",
+    "2025-07-16.md",
+    "Story.md",
+    "Notes.md",
+    "curl/websockets.h",
+    "curl/urlapi.h",
+    "curl/typecheck-gcc.h",
+    "curl/system.h",
+    "curl/stdcheaders.h",
+    "curl/options.h",
+    "curl/multi.h",
+    "curl/mprintf.h",
+    "curl/header.h",
+    "curl/easy.h",
+    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/wcurl.md",
+    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/testcurl.md",
+    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/runtests.md",
+    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/mk-ca-bundle.md",
+    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/curl-config.md",
+    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/VULN-DISCLOSURE-POLICY.md",
+    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/VERSIONS.md",
+    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/URL-SYNTAX.md",
+    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/TheArtOfHttpScripting.md",
+    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/SSLCERTS.md",
+    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/SSL-PROBLEMS.md",
+    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/SPONSORS.md",
+    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/SECURITY-ADVISORY.md",
+    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/RUSTLS.md",
+    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/RELEASE-TOOLS.md",
+    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/ROADMAP.md",
+    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/RELEASE-PROCEDURE.md",
+    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/README.md",
+    "curl-8.14.1_2-win64-mingw/curl-8.14.1_2-win64-mingw/docs/MAIL-ETIQUETTE.md"
+  ]
+}

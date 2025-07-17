@@ -66,9 +66,7 @@ public:
             default:
                 return;
 
-
         }
-
     }
 
     void resetJSON(){

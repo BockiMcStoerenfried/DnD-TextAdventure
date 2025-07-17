@@ -6,7 +6,7 @@
 #include <chrono>
 #include <thread>
 #include <iostream>
-#include <sstream>
+
 #include <vector>
 
 
@@ -36,16 +36,12 @@ public:
         delete data;
     }
 
- 
     void printView(json interactor, json interaction, json with){
 
         json printFile =  data->getData(interactor, interaction, with);
 
         std::cout << "\n" << std::endl;
         typeWrite(printFile[0], 40);
-
-        
-
     }
 };
 
