@@ -140,9 +140,6 @@ public:
 
     }
 
-
-
-
 //Getting data ========================================================================
     json getData(std::string interactor, std::string interaction, std::string with){
 
@@ -160,7 +157,6 @@ public:
         }
 
     }
-
 
 //Ending===============================================================================
     json getEnd(){

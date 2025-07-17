@@ -18,6 +18,7 @@ public:
     EventHandler(){
 
         data = new ModelDataHolder();
+        view = new ViewManager();
     }
 
     ~EventHandler() {
